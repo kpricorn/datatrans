@@ -24,7 +24,6 @@ module Datatrans::XML
 
     def credit
       self.request = CreditRequest.new(self.datatrans, params)
-      binding.pry
       @response = CreditResponse.new(self.datatrans, request.process)
       @response.successful?
     end

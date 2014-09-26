@@ -172,7 +172,6 @@ Todo
 
 * allow signing of xml transactions
 * allow signing with different keys
-* add credit method to reverse already captured transactions
 * add purchase method to authorize and capture in one step
 * add url helpers for success, cancel and error urls
 * extend configuration possibilities

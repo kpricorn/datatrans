@@ -4,6 +4,7 @@ module Datatrans
     DEFAULT_ENVIRONMENT = :development
 
     DEFAULT_SIGN_KEY = false
+    DEFAULT_SIGN_DIGEST = 'md5'
 
     BASE_URL_PRODUCTION = 'https://payment.datatrans.biz'.freeze
     BASE_URL_DEVELOPMENT = 'https://pilot.datatrans.biz'.freeze
@@ -23,18 +24,20 @@ module Datatrans
       }.freeze
     }.freeze
 
-    attr_reader :environment, :merchant_id, :sign_key, :proxy
+    attr_reader :environment, :merchant_id, :sign_key, :sign_digest, :proxy
 
     # Configure with following options
     # * :merchant_id (required)
     # * :sign_key (defaults to false)
     # * :environment (defaults to :development, available environments are defined in ENVIRONMENTS)
     # * :proxy (a hash containing :http_proxyaddr, :http_proxyport, :http_proxyuser, :http_proxypass)
+    # * :sign_digest (md5|sha256, default md5)
     def initialize(options = {})
       @merchant_id = options[:merchant_id]
       raise ArgumentError.new(":merchant_id is required") unless self.merchant_id
       self.environment = options[:environment] || DEFAULT_ENVIRONMENT
       @sign_key = options[:sign_key] || DEFAULT_SIGN_KEY
+      @sign_digest = options[:sign_digest] || DEFAULT_SIGN_DIGEST
       @proxy = options[:proxy] || {}
     end
 

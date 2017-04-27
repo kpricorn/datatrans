@@ -154,6 +154,10 @@ To make an authorized transaction invalid use void.
 CHANGELOG
 =========
 
+3.0.3
+-------
+* added ability to pass signing digest (default `md5`)
+
 3.0.2
 -------
 Specified MIT License.

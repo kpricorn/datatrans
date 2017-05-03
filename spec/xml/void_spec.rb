@@ -69,7 +69,7 @@ describe Datatrans::XML::Transaction::VoidRequest do
     context "build_void_request" do
       it "generates a valid datatrans void xml" do
         @request = Datatrans::XML::Transaction::VoidRequest.new(@datatrans, @valid_params)
-        @request.send(:build_void_request).should == "<?xml version=\"1.0\" encoding=\"UTF-8\"?><paymentService version=\"1\"><body merchantId=\"1100000000\"><transaction refno=\"ABCDEF\"><request><amount>1000</amount><currency>CHF</currency><uppTransactionId>110808143302868124</uppTransactionId><reqtype>DOA</reqtype></request></transaction></body></paymentService>"
+        @request.send(:build_void_request).should == "<?xml version=\"1.0\" encoding=\"UTF-8\"?><paymentService version=\"1\"><body merchantId=\"1100000000\"><transaction refno=\"ABCDEF\"><request><amount>1000</amount><currency>CHF</currency><uppTransactionId>110808143302868124</uppTransactionId><reqtype>DOA</reqtype><sign>0402fb3fba8c6fcb40df9b7756e7e637</sign></request></transaction></body></paymentService>"
       end
     end
 

@@ -158,6 +158,7 @@ CHANGELOG
 -------
 
 * Allow `reqtype` param for `Authorize` requests
+* Sign `Void` requests
 
 3.0.3
 -------

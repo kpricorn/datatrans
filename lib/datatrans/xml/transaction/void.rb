@@ -17,6 +17,7 @@ class Datatrans::XML::Transaction
         xml.currency params[:currency]
         xml.uppTransactionId params[:transaction_id]
         xml.reqtype 'DOA'
+        xml.sign sign(self.datatrans.merchant_id, params[:amount], params[:currency], params[:refno])
       end
     end
   end

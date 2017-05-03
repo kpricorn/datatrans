@@ -16,7 +16,7 @@ module Datatrans::Web
     end
 
     def signature
-      sign(self.datatrans.sign_digest, self.datatrans.merchant_id, params[:amount], params[:currency], params[:refno])
+      sign(self.datatrans.merchant_id, params[:amount], params[:currency], params[:refno])
     end
 
     def authorize

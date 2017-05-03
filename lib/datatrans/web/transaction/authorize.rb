@@ -15,7 +15,7 @@ class Datatrans::Web::Transaction
     def valid_signature?
       # TODO: does not make sense... true if errors?
       return true if errors_occurred? # no sign2 sent on error
-      sign(self.datatrans.sign_digest, self.datatrans.merchant_id, params[:amount], params[:currency], params[:uppTransactionId]) == params[:sign2]
+      sign(self.datatrans.merchant_id, params[:amount], params[:currency], params[:uppTransactionId]) == params[:sign2]
     end
 
     def response_code

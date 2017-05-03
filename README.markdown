@@ -154,6 +154,11 @@ To make an authorized transaction invalid use void.
 CHANGELOG
 =========
 
+3.1.0
+-------
+
+* Allow `reqtype` param for `Authorize` requests
+
 3.0.3
 -------
 * added ability to pass signing digest (default `md5`)

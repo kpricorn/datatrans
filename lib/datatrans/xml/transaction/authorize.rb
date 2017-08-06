@@ -27,7 +27,7 @@ class Datatrans::XML::Transaction
 
   class AuthorizeResponse < Response
     def successful?
-      response_code == '01' && response_message == 'authorization successful'
+      response_code == '01' && error_code.nil?
     end
 
     def response_code

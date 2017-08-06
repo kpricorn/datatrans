@@ -19,6 +19,7 @@ class Datatrans::XML::Transaction
         xml.expm params[:expm]
         xml.expy params[:expy]
         xml.reqtype params[:reqtype] if params[:reqtype]
+        xml.pmethod params[:pmethod] if params[:pmethod]
         xml.sign sign(self.datatrans.merchant_id, params[:amount], params[:currency], params[:refno])
       end
     end

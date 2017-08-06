@@ -24,7 +24,7 @@ class Datatrans::XML::Transaction
 
   class VoidResponse < Response
     def successful?
-      response_code == '01' && response_message == 'cancellation succeeded'
+      ['01', '02'].include?(response_code) && response_message == 'cancellation succeeded'
     end
 
     def response_code
